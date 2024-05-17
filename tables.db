@@ -1,0 +1,106 @@
+databse name ashafoundation
+
+CREATE TABLE immunization_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    dob DATE NOT NULL,
+    sender VARCHAR(255) NOT NULL,
+    visit_date DATE NOT NULL,
+    immunization_date DATE NOT NULL
+);
+
+
+CREATE TABLE due_list_immunization (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    child_name VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    sender VARCHAR(255) NOT NULL,
+    vaccine_for VARCHAR(255) NOT NULL,
+    parent_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE awareness_program (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE NOT NULL,
+    place VARCHAR(255) NOT NULL,
+    attendants INT NOT NULL,
+    topic VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE record_of_birth (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    mother_name VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    place_of_birth VARCHAR(255) NOT NULL,
+    sender VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE record_of_death (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    sender VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE monthly_meeting (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    phc_meeting_date DATE NOT NULL,
+    about TEXT NOT NULL,
+    subcenter_meeting_date DATE NOT NULL
+);
+
+CREATE TABLE monthly_incentive_claim (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    asha_name VARCHAR(255) NOT NULL,
+    bank_account_number VARCHAR(255) NOT NULL,
+    bank_name VARCHAR(255) NOT NULL,
+    block_name VARCHAR(255) NOT NULL,
+    phc_name VARCHAR(255) NOT NULL,
+    subcenter_name VARCHAR(255) NOT NULL,
+    district VARCHAR(255) NOT NULL,
+    month VARCHAR(255) NOT NULL,
+    year INT NOT NULL
+);
+
+CREATE TABLE village_profile (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Area_Name VARCHAR(255) NOT NULL,
+    Population INT NOT NULL,
+    Number_of_Male INT NOT NULL,
+    Number_of_Female INT NOT NULL,
+    Number_of_Houses INT NOT NULL
+);
+
+
+CREATE TABLE ashaprofile (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    DOB DATE NOT NULL,
+    Phone_Number VARCHAR(15) NOT NULL,
+    Date_of_Joining DATE NOT NULL,
+    District VARCHAR(100) NOT NULL,
+    Category VARCHAR(100) NOT NULL,
+    Address TEXT NOT NULL
+);
+
+CREATE TABLE anmprofile (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    Contact_Number VARCHAR(15) NOT NULL,
+    Address TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    gender ENUM('male', 'female', 'other') NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+
+
+
+
